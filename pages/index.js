@@ -38,7 +38,12 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <Input placeholder="Diz aí seu nome" onChange={(e) => setName(e.target.value)} name="nomedoUsuario" />
+              <Input
+                placeholder="Diz aí seu nome"
+                onChange={(e) => setName(e.target.value)}
+                name="nomeDoUsuario"
+                value={name}
+              />
               <Button type="submit" disabled={name.length === 0}>
                 Jogar
                 {' '}

@@ -64,4 +64,11 @@ Widget.Topic = styled.a`
   }
 `;
 
+Widget.Spinner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em auto;
+`;
+
 export default Widget;

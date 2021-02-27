@@ -8,11 +8,13 @@
     "eslint:init": "eslint --init"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.5",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-is": "^16.8.0",
+    "react-spinners": "^0.10.6",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

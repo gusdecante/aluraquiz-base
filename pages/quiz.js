@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { ClipLoader } from 'react-spinners';
+import { css } from '@emotion/react';
+
 import {
   Button, Widget, QuizLogo, QuizBackground, QuizContainer,
 } from '../src/components';
 import db from '../db.json';
+
+const loaderCSS = css`
+  color: red;
+`;
 
 function LoadingWidget() {
   return (
@@ -16,15 +23,17 @@ function LoadingWidget() {
           Carregando...
         </Widget.Header>
 
-        <Widget.Content>
-          [Desafio do Loading]
-        </Widget.Content>
+        <Widget.Spinner>
+          <ClipLoader size={120} loading color="lightblue" css={loaderCSS} />
+        </Widget.Spinner>
       </Widget>
     </>
   );
 }
 
-const QuestionWidget = ({ question, totalQuestions, questionIndex, onSubmit }) => {
+const QuestionWidget = ({
+  question, totalQuestions, questionIndex, onSubmit,
+}) => {
   const questionId = `question__${questionIndex}`;
   return (
     <Widget>
@@ -91,7 +100,6 @@ export default function QuizPage() {
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
 
-  // console.log(db.questions)
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
