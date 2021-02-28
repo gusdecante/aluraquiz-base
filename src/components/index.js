@@ -6,3 +6,4 @@ export { default as QuizLogo } from './QuizLogo';
 export { default as Widget } from './Widget';
 export { default as Button } from './Button';
 export { default as QuizContainer } from './QuizContainer';
+export { default as AlternativesForm } from './AlternativeForm';
