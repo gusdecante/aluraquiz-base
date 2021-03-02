@@ -4,9 +4,9 @@ import { ClipLoader } from 'react-spinners';
 import { css } from '@emotion/react';
 
 import {
-  Button, Widget, QuizLogo, QuizBackground, QuizContainer, AlternativesForm,
-} from '../src/components';
-import db from '../db.json';
+  Button, Widget, QuizLogo, QuizBackground, QuizContainer, AlternativesForm, BackLinkArrow,
+} from '../../components';
+// import db from '../../../db.json';
 
 const loaderCSS = css`
   color: red;
@@ -75,6 +75,7 @@ const QuestionWidget = ({
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3>
           {`Pergunta ${questionIndex} de ${totalQuestions}`}
         </h3>
@@ -143,13 +144,13 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+export default function QuizPage({ externalDB }) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);// Loading
   const [results, setResults] = useState([]);
-  const totalQuestions = db.questions.length;
+  const totalQuestions = externalDB.questions.length;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = externalDB.questions[questionIndex];
 
   function addResult(result) {
     setResults([...results, result]);
@@ -171,7 +172,7 @@ export default function QuizPage() {
   };
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={externalDB.bg}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (

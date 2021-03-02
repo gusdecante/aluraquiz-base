@@ -7,3 +7,5 @@ export { default as Widget } from './Widget';
 export { default as Button } from './Button';
 export { default as QuizContainer } from './QuizContainer';
 export { default as AlternativesForm } from './AlternativeForm';
+export { default as Link } from './Link';
+export { default as BackLinkArrow } from './BackLinkArrow';

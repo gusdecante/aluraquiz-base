@@ -28,7 +28,8 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-arcade.wesdrasalves.vercel.app/",
+      "https://aluraquiz-devsoutinho-git-master.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
